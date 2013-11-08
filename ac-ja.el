@@ -52,7 +52,7 @@
 
 (defvar ac-skk-alist nil)
 (defvar ac-skk-alist-file "~/ac-skk-alist.el")
-(defvar ac-skk-jisyo-file nil)
+(defvar ac-skk-jisyo-file "~/SKK-JISYO.L")
 (defvar ac-skk-buffer " *ac-skk*")
 
 (defun ac-dabbrev-ja-expand (arg)
@@ -217,7 +217,7 @@
         (countt 0)
         alist word)
     (with-temp-buffer
-      (insert-file-contents "~/SKK-JISYO.L") 
+      (insert-file-contents ac-skk-jisyo-file) 
       (goto-char (point-min))
       (search-forward ";; okuri-nasi entries.")
       (while (re-search-forward "/\\(.[^/]*\\)" nil t)
